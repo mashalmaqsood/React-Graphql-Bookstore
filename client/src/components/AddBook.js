@@ -1,4 +1,4 @@
-import { gql, useMutation, useQuery } from "@apollo/client"; //for parsing graphql queries
+import { useMutation, useQuery } from "@apollo/client"; //for parsing graphql queries
 import { getAuthorsQuery,addBookMutation, getBooksQuery } from "../queries/queries";
 import { useState } from "react";
 
