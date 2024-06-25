@@ -2,7 +2,6 @@ import { useQuery } from "@apollo/client"; //for parsing graphql queries
 import { getBooksQuery,getBookQuery } from "../queries/queries";
 
 function BookDetails({bookId}) {
-    console.log("Book id",bookId)
   const {loading,error,data} = useQuery(getBookQuery,
     {
         variables:{id:bookId}
@@ -10,7 +9,6 @@ function BookDetails({bookId}) {
   );
   if(error) return <p>Error : {error.message}</p>
   if(loading) return <p>Loading ... </p>
-  console.log("data",data);
   const displayBookDetails = () =>
   {
     const {book} = data;

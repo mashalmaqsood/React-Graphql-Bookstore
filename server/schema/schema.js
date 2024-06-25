@@ -55,7 +55,6 @@ const BookType = new GraphQLObjectType({
       //parent is the book here for eg
       // parent { name: 'The Final Empire', genre: 'Fantasy', id: '2', authorId: '2' }
       resolve(parent, args) {
-        // console.log("parent",parent);
         // return _.find(authors,{id:parent.authorId}) //we will use mongo db now instead of dummy data
         return Author.findById(parent.authorId)
       },

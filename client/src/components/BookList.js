@@ -7,7 +7,6 @@ function BookList() {
   const {loading,error,data} = useQuery(getBooksQuery);
   if(error) return <p>Error : {error.message}</p>
   if(loading) return <p>Loading ... </p>
-  console.log("data",data);
   return (
     <div id="main">
       <ul id="book-list">

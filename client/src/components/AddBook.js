@@ -6,10 +6,8 @@ function AddBook() {
   const [name, setName] = useState("");
   const [genre, setGenre] = useState("");
   const [authorId, setAAuthorId] = useState("");
-  console.log("result", useMutation(addBookMutation));
   const [addBook] = useMutation(addBookMutation)
   const { loading, error, data } = useQuery(getAuthorsQuery);
-  console.log("DATAAA",data);
   const displayAuthors = () => {
     if (loading) return <option disabled>Loading authors</option>;
     if (error) return <option disabled>Error loading authors</option>;
@@ -22,7 +20,6 @@ function AddBook() {
 
   const submitForm = async(e) => {
     e.preventDefault();
-    console.log({ name, genre, authorId });
     try {
       await addBook({
         variables: {
